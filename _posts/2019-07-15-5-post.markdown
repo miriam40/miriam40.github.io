@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "ITEM 5 :: EFFECTIVE C#"
+subtitle: "문화권별로 다른 문자열을 생성하려면 FormattableString을 사용하라"
+date:   2019-07-15 12:00:35
+categories: [EffectiveC샵]
+---
+
+**안녕하세요, 무려 다섯번째 시간입니다.**
+
+___
+
+이번 챕터에는 전 챕터의 보간문자열과 어느정도 연관이 있는 주제입니다.
+바로, 문화권별로 다른 문자열을 생성할 때는 FormattableString 타입을 사용해야한다는 것입니다.
+책에는 마이크로소프트 사의 프로그래머들이 문화권별로 문자열을 생성함과 동시에 그 사용법이 복잡하지 않아야 한다는 점을 어떻게 풀어나갔는지 적혀있는데,
+저희는 그것보다는 기능에 충실하도록 합시다.
+이렇게만 말하면 조금 얕게 들릴 수 있으니, 설명 들어가겠습니다!
+
+
+## 설명
+
+1. 문자열 보간 기능의 결과로 생성되는 반환값은 문자열일 수도 있지만, FormattableString 을 상속한 타입일 수도 있다. 즉, 용도에 따라서 두개를 나눠서 사용해야 한다는 것을 의도적으로 나타내고 있다.
+
+2. 간단하게 말해서는 string과 FormattableString, 두 가지의 형태로 반환된다고 할 수 있다.
+
+3. 물론, 사소한 차이로 string 혹은, FormattableString으로 인식될 수 있으므로 var를 사용할 때에는 각별한 주의가 필요하다.
+
+4. FormattableString을 상속한 타입의 객체라면, 이를 통해 현재 컴퓨터에서 지정된 문화권에 따라 문자열을 생성할 수 있다. 책에서는 미국에서의 소수점 기호 '.'와, 유럽권에서의 소수점 기호 ','를 비교한 부분이 있다. 이와 같이, 각 문화권에 해당하는 문자열로 바꿀 수 있다는 것이다! 어떻게? FormattableString 객체를 이용하면!
+
+5. 4번에서의 코드는 아래와 같다.
+{% highlight javascript %}
+public static string ToGerman(FormattableString src) // 독일의 문화권으로 지정
+{
+   return string.Format(null,
+System.Globaliztion.CultureInfo.CreateSpecificCulture("de-de"),src.Format.src.getArguments());
+}
+
+public static string ToGerman(FormattableString src) // 캐나다 혹은, 불어 문화권을 지정
+{
+   return string.Format(null,
+System.Globaliztion.CultureInfo.CreateSpecificCulture("fr-CA"),src.Format.src.getArguments());
+}
+{% endhighlight %}
+즉, 문자열을 객체로 넘기면 반환값으로 해당 문화권에 해당하는 문자열을 넘겨준다는 소리다.
+
+## 주의점
+
+- 만약 var로 변수를 선언했다면, 몇 가지 주의가 필요하다. 그 첫번째로, 문자열을 매개변수로 취하는 메서드, 즉, string을 매개변수로 받는 메서드에 var로 생성된 변수를 넘겨주게 되면 당연하지만, var는 string이 된다. string으로써 넘겨진 변수는 FormattableString 객체가 아니므로, 문제가 발생할 요지가 있다.
+
+- 또한, string과 FormattableString 둘 다 받을 수 있는 오버로딩 메서드를 작성하게 되었을 때 이를 넘기게 되면 이 경우에도 var로 선언한 변수가 string 타입의 오버로딩된 메서드를 호출하게 된다. 이 또한 위의 문제와 어느정도 일맥상통한다.
+
+
+## 정리
+
+결국, 문자열 보간 기능은, 이러한 글로벌화 혹은 지역화에 필요한 대부분의 기능을 갖추고 있다. 문화권을 고려하여 문자열을 생성하는 내부적인 복잡함도 마이크로소프트사의 프로그래머들이 잘 감추어놨기도 하다. 그리고 무엇보다 사용이 어렵지 않다.
+즉, 앞으로, 문화권을 임의로 지정해, 해당 문화권의 문자열로 변환해야할 경우에는, 명시적으로 FormattableString 타입의 객체를 생성하도록 코드를 작성하고 이 객체를 통해 문자열을 얻어 오는 방법을 사용하는 것을 이 책은 권하고 있다.
+
+
+
+
+
+
