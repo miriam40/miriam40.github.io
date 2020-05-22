@@ -1,3 +1,7 @@
+# 2020 - 05 - 22 
+# 페이징 수를 줄이면 페이지가 생기는데 해당 페이지에 대한 부분 처리해주어야 함.
+# 화면 ghost 이미지 변경할 예정
+# About 화면 연결 이상 수정
 # Jekyll configuration
 markdown: kramdown
 highlighter: rouge
