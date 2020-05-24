@@ -1,7 +1,8 @@
 # 2020 - 05 - 22 
 # 페이징 수를 줄이면 페이지가 생기는데 해당 페이지에 대한 부분 처리해주어야 함.
 # 화면 ghost 이미지 변경할 예정
-# About 화면 연결 이상 수정
+# About 화면 이미지 연결 이상 수정
+# 포스트 별 글씨체 혹은 태그 부분 수정 예정
 # Jekyll configuration
 markdown: kramdown
 highlighter: rouge
@@ -72,7 +73,7 @@ feed:
 safe: False
 lsi: False
 username: miriam40
-repo: jasper2
+repo: miriam40
 branch: miriam40.github.io
 # ../jasper2/
 relative_source: "../"
