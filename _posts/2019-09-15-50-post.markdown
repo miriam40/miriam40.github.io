@@ -3,6 +3,7 @@ layout: post
 title:  "ITEM 50 :: EFFECTIVE C#"
 subtitle: "예외 필터의 다른 활용 예를 살펴보라 :: 종료"
 date:   2019-09-15 17:21:35
+logo: ./assets/images/fantasy-flowers-2-margaret-saheed.jpg
 categories: [EffectiveC샵]
 ---
 
