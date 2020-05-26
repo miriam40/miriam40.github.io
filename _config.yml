@@ -19,7 +19,7 @@ description: The professional Programming platform
 cover: ../assets/images/blog-cover.jpg
 logo: ../assets/images/blog-icon.png
 logo_dark: ../assets/images/favicon.png
-favicon: ../assets/images/favicon.png
+favicon: ./assets/images/favicon.png
 CNAME: Variufheben #add cname for website to be created
 
 # Social info
