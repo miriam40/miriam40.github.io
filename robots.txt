@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://miriam40.github.io/sitemap.txt
