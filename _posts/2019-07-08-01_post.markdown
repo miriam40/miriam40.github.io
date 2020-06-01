@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "ITEM 1 :: EFFECTIVE C#"
-subtitle: "Var?"
 date:   2019-07-09 12:21:35
-categories: [EffectiveC샵]
+tag: C#
 ---
 
 **안녕하세요**
