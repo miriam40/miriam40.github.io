@@ -1,7 +1,7 @@
 ---
 title: First Write
 layout: post
-tag: Code
+tag: About
 ---
 ## 대단해!
 
