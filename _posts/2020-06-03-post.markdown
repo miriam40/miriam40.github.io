@@ -14,7 +14,7 @@ ___
 특별하게도 C#, 그리고 .NET의 위상이 전년도를 포함한 과거에 비해 높아졌음을 볼 수 있는 랭킹을 볼 수 있었습니다!
 
 
-![C#](../../assets/images/cSharpMini.jpg)
+![C#](/assets/images/cSharpMini.jpg)
 
 
 ## C#? .NET CORE? ASP.NET은?
